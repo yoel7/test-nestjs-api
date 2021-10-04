@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "studious-legend-328003",
+  "private_key_id": "00a72820390e18543d7a74c543eebcbc9ed8bb02",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCioM6B+OP2ZgR1\nWcCm+zFHS4li8LfOQuE9v6wuLttxuOxxZS1xlOZ5FRN8j5ABv1sqYHLVNczeIfnh\naGSWpQywOAbCdeYigFXSrVOp4caPAVcSZ6evTrnT7RdRIfaB6RlvzGxtHylrkNIb\nvHSj0ihPyLIJTsaQULReHMyrHmJ1xMZ6YBs2pAjIJPpluwZP7TJM8+s7plgsQqSx\nRDCqCR8AA3hqkmJCWEVyuV6YhMBwnBGcYqPax6cwGsAeO4UF255ExbCWa+MMXZUf\nnI9jQAgkFr44bkt0Fl+sghZ7Y/ppPS8oMuFml8GYk6s02Ohqe5lpnxQ4EMWDzvuQ\nCbgyTonJAgMBAAECggEAQK6YtBUcBhpZV5tVBpUN6n9eq112nbD4CSk9ADleyoJ0\neD13r587c5kwYPBwpGFJjzdBNQ/q5ca5ri9pIomO3F/MQHfICpzkhaCuj/jekm5E\nBWv4w78aJfI8veY2N0FQ/qhdz6D/RmsZRjLUaXvi0KjQNueADlIrCuuFc+Hn41K3\nhBoF1I550miC79jOdLTmUUnDLJtTXOpRLFOBrSIxfnaEQUtUh7s1XlRRY0aEy0OL\nWkhGO6izzdrvH+s3t4fwWHlNDP1OtjmsmmewU0M9wqTTGIMykjqa8iZezDtNOkTK\nETX2+r3A9JJQfN1sxa6egKoBEzHTk2ncZxZxnYYzaQKBgQDd9Er2Hm2I1WbFa24L\ne5ykemdccjWzK1DWhENP5m23NgjYxX8grUl9YaT/P5vw2wrNtMPK2yv8pown97rc\nP3gKI00Go2xUHpJgyWnqYLsDTEHsXkmabNcWYroARKalpcBTXTEjqCDpboYoIE6H\nzTnVHEH82bwfj2yPb25M5rc7/wKBgQC7kuTdS7ZeT8k2kLSXOi/My1bo4hYc4RFo\nwWpCep3z6WgkkS52cwUbS9pU8Ng7YlYsundXdQqDhZ8LipjcwttR+I9B4XQ8xOT3\nmfslwbky59+bIoDS1q31vdD0sqmsoOWv31sm2AMJFyTvYIm7llQ/n+BnUjPRc1HJ\neoWb7idaNwKBgFYkCK/KkWJIyFEYZ6YnPF0NcG4NmU/HIOGQhXtOCAjR/M78n2E0\nP9BchCfYLRJmQKQjYtWpCEJO9RhR6gCu1UzB9JP9+v4Ou2q64NNo5UvbXb55vYEk\nermiaWPPQQoK8UCpa3fWOae/EGwkVbYY7TgLdoTGkF+DT3O/oIRSCo1LAoGAICK+\nixtZlzbcJjkMd4xEfDWqIiP53eDBds0MQ292eD9Y1Er7RtfV3CNWuI66vRHP6cHY\niGdI8deGtBd+sPPBV33aLVNO8spY4ALFgGZ8MDiBmraCk5ysGRn4HrQtVaILN+Jw\nX2tKudf5P/muHzFWJcBiVdFDh3LWZEpVca2PmGkCgYBMa/SKig7WfpvqCXYtOY72\nO48wFjHVQ3Ifg65T63FT99dxwhU3nk9hBEVsQcC6vYNmFpIR9hs8U/7YGS4Krb+M\ne49CZI7n0AeDp1T6eNpF9zq/nfjdM/7CwaRJxcyD6rsbX0Revmv37+SPZJWdX89r\nqN9FmFjkGNdXvO2hr9bm2Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "nest-test@studious-legend-328003.iam.gserviceaccount.com",
+  "client_id": "105155752302282011734",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nest-test%40studious-legend-328003.iam.gserviceaccount.com"
+}

@@ -6,8 +6,6 @@ export type CustomerDocument = Customer & Document;
 @Schema()
 export class Customer {
   @Prop()
-  name: string;
-  @Prop()
   firstname: string;
 
   // @Prop({ required: true })

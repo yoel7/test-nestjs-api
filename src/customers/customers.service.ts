@@ -1,6 +1,6 @@
 import { Body, Injectable } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
-import { Connection, Model } from 'mongoose';
+import { Connection, Model, FilterQuery } from 'mongoose';
 import { Customer, CustomerDocument, CustomerSchema } from "./schemas/customer.schema";
 import { CreateCustomerDto } from "./schemas/create-customer.dto";
 
@@ -13,11 +13,14 @@ export class CustomersService {
     // async create( createCustomerDto: any): Promise<Customer> {
     async create(createCustomerDto: CreateCustomerDto): Promise<Customer> {
     const newCustomer = new this.customerModel({...createCustomerDto});
-    return newCustomer.save();
+    return await newCustomer.save();
   }
 
-  async findAll(): Promise<Customer[]> {
-    return this.customerModel.find().exec();
+  async find(q: string): Promise<Customer[]> {
+    // let filter: any = q && {$or:[{firstname:q},{lastname:q}]}
+    let filter: any = q ? {$or:[{firstname:q},{lastname:q}]} : null
+    // return await this.customerModel.find().exec();
+    return await this.customerModel.find(filter);
   }
 
     async getHello(): Promise<string> {

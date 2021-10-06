@@ -7,8 +7,10 @@ export class CustomersController {
     constructor(private readonly customersService: CustomersService) {}
 
   @Post()
-  create(@Body() createCustomerDto: CreateCustomerDto) {
-    return this.customersService.create(createCustomerDto);
+//   create(@Body() createCustomerDto: CreateCustomerDto) {
+    // return this.customersService.create(createCustomerDto);
+  create(@Body() Body: object) {
+    return this.customersService.create(Body);
   }
 
   @Get()
@@ -19,7 +21,7 @@ export class CustomersController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    // return this.customersService.findOne(+id);
+    return this.customersService.findById(id);
   }
 
 //   @Patch(':id')

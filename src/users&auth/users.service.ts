@@ -1,18 +1,29 @@
 import { Injectable } from '@nestjs/common';
+import { InjectConnection, InjectModel } from '@nestjs/mongoose';
+import { Connection, Model } from 'mongoose';
 import { UserDto } from './schemas/user.dto';
+import { User, UserDocument } from "./schemas/user.schema";
 
 @Injectable()
 export class UsersService {
-  create(UserDto: UserDto) {
-    return 'This action adds a new user';
+   constructor(@InjectModel(User.name) private UserModel: Model<UserDocument>,
+    @InjectConnection() private connection: Connection
+    ) { }
+  async create(UserDto: UserDto) {
+    // req.body.password = crypto.cryptPassword(req.body.password);
+    const newUser = new this.UserModel({...UserDto});
+        return await newUser.save();
   }
 
-  findAll() {
-    return `This action returns all users`;
+  getUser(user) {
+    return JSON.stringify(user);
   }
 
-  findByToken(id: number) {
-    return `This action returns a # user`;
+  async findById(_id: string) {
+    return await this.UserModel.find({_id})
+  }
+  async findUserByUsername(username: string) : Promise<User> {
+    return await this.UserModel.findById({username})
   }
 
   update(UserDto: UserDto) {
@@ -21,5 +32,8 @@ export class UsersService {
 
   remove(id: number) {
     return `This action removes a #${id} user`;
+  }
+  login() {
+     return 'jnjnj'
   }
 }

@@ -2,46 +2,32 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from "@nestjs/axios";
 import { AxiosResponse } from "axios";
 import { firstValueFrom, Observable } from 'rxjs';
+import { API_KEY } from "./env";
 
-const API_KEY = 'AIzaSyD2wts5vuppwNwk69hpIprVka4tpn9_kj4'
+// const API_KEY = 
 const url = 'https://translation.googleapis.com/language/translate/v2'
 
 @Injectable()
 export class TranslationService {
-    constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService) { }
 
+  // async get2(): Promise<any> {
+  //   // return this.httpService.post<AxiosResponse<any>>(`${url}?q=${encodeURIComponent(q)}&target=${target}&key=${API_KEY}`);
+  //   let urii = 'https://jsonplaceholder.typicode.com/todos/1';
+  //   let R
+  //   // return await this.httpService.get<AxiosResponse<any>>(urii).toPromise()
+  //   await firstValueFrom(this.httpService.get<AxiosResponse<any>>(urii)).then(r => R = r).catch(r => R = r)
+  //   return Promise.resolve(JSON.stringify(R.data))
+
+  // }
   async get(q: string, target: string): Promise<any> {
-    // return this.httpService.post<AxiosResponse<any>>(`${url}?q=${encodeURIComponent(q)}&target=${target}&key=${API_KEY}`);
-    let urii = `${url}?q=${q}&target=${target}&key=${API_KEY}`
-    console.log(urii);
-      // return await firstValueFrom(this.httpService.post<AxiosResponse<any>>(urii))
-    let res = await firstValueFrom(this.httpService.post<AxiosResponse<any>>(urii))
-    console.dir(res);
-    
-     if (res.status != 200) {
-        return { msg: 'Request failed with status code ' + res.status }
-          }
-    return (res && res.data && res.data.data&&res.data.data.translations[0].translatedText)|| res;
-
-
-
-      // firstValueFrom(this.httpService.post<AxiosResponse<any>>(urii)).then()
-      // this.httpService.post<AxiosResponse<any>>(urii))
-        // .subscribe({
-        //   next: (resg) => {
-        //     return resg.data.data.translations[0].translatedText;
-        //   },
-        //    error: (resg) => 'Request failed with status code ' + resg.status
-        // });
-    // return new Promise((resolve, reject) => {
-    //   this.httpService.post<AxiosResponse<any>>(urii)
-    //     .subscribe((resg) => {
-    //       if (resg.status != 200) {
-    //         reject({ msg: 'Request failed with status code ' + resg.status })
-    //       }
-    //       resolve(resg.data.data.translations[0].translatedText);
-    //     });
-    // })
+    let uri = `${url}?q=${q}&target=${target}&key=${API_KEY}`
+    console.log(uri);
+    let resApi = await firstValueFrom(this.httpService.get<AxiosResponse<any>>(uri))
+    // if (resApi.status != 200) {
+    //   return Promise.reject('Request failed with status code ' + resApi.status)
+    // }
+    return Promise.resolve(resApi.data.data.translations[0].translatedText)
   }
 
 }

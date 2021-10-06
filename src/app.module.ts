@@ -8,7 +8,7 @@ import { TranslationController } from './translation.controller';
 import { HttpModule } from "@nestjs/axios";
 import { TranslationService } from './translation.service';
 import { UsersModule } from './users&auth/users.module';
-import { AuthMiddleware } from './users&auth/authMiddleware';
+import { Middleware } from './users&auth/auth';
 
 
 const url = `mongodb+srv://yoel1613195:zxcvb12345@cluster0.6ybzi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
@@ -23,8 +23,8 @@ export class AppModule implements NestModule{
      .apply(LoggerMiddleware)
      .forRoutes('/')
     //  .forRoutes('*')
-     .apply(AuthMiddleware)
-     .exclude('user', 'login', 'register')
+     .apply(Middleware)
+     .exclude('login', 'register')
      .forRoutes('/')
   }
 }

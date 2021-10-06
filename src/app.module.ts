@@ -9,11 +9,12 @@ import { HttpModule } from "@nestjs/axios";
 import { TranslationService } from './translation.service';
 import { UsersModule } from './users&auth/users.module';
 import { Middleware } from './users&auth/auth';
+import { MONGO_URL } from './env';
 
 
-const url = `mongodb+srv://yoel1613195:zxcvb12345@cluster0.6ybzi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+
 @Module({
-  imports: [HttpModule,CustomersModule, MongooseModule.forRoot(url, { useNewUrlParser: true, useUnifiedTopology: false }), UsersModule,],
+  imports: [HttpModule,CustomersModule, MongooseModule.forRoot(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: false }), UsersModule,],
   controllers: [AppController, TranslationController],
   providers: [AppService, TranslationService],
 })

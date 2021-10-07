@@ -21,14 +21,14 @@ export class Auth{
     let splitToken = this.splitToken(token)
     if (!splitToken) return
     let {_doc} : any = await this.usersService.findUserById(splitToken._id, {password:0})
-      .catch(() => new UnauthorizedException())
-  return (_doc  && delete _doc.password && _doc)
+      .catch(() =>  new NotFoundException())
+  return _doc
   }
   splitToken(token: any) {
     if (!token || token.split(' ').length == 1) return
     token = getDecrypt(token.split(' ')[1])
     token = token.split(split)
-    if (token.length < 2 || +token[2] > Date.now()) return
+    if (token.length < 2 || +token[1] < Date.now()) return
     return {_id:token[0]}
   }
 
@@ -45,7 +45,6 @@ function getEncrypt(input) {
     const enc = cryptojs.AES.encrypt(input, SECRET);
     return enc.toString();
 }
-// Utf8
 function getDecrypt(input) {
     const dec = cryptojs.AES.decrypt(input, SECRET);
     return dec.toString(cryptojs.enc.Utf8);

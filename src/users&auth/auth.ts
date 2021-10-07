@@ -49,6 +49,5 @@ function getEncrypt(input) {
 function getDecrypt(input) {
     const dec = cryptojs.AES.decrypt(input, SECRET);
     return dec.toString(cryptojs.enc.Utf8);
-    // return dec.toString();
-    // return dec.toString(cryptojs.enc);
+
 }

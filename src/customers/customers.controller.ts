@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query,Request } from '@nestjs/common';
+import { myRequest } from 'src/users&auth/auth';
 import { CustomersService } from "./customers.service";
 import { CreateCustomerDto } from "./schemas/create-customer.dto";
 
@@ -15,7 +16,6 @@ export class CustomersController {
 
   @Get()
   find(@Query() query: any) {
-    // return this.customersService.find(query.q || null);
     return this.customersService.find(query.q);
   }
 

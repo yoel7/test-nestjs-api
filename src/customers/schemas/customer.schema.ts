@@ -10,6 +10,8 @@ export class Customer {
   
   @Prop({ required: true })
   lastname: string;
+  // @Prop()
+  // _id:string
 }
 
 export const CustomerSchema = SchemaFactory.createForClass(Customer);
